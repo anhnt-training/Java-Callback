@@ -9,6 +9,7 @@ public class Main {
 		
 		EventManager.register(subscriber1, subscriber2, subscriber3);
 		
+		
 		EventManager.publish("Hello,"); //Publish to all subscribers.
 		EventManager.publish("world!", Subscriber1.class, Subscriber3.class); //Publish to each subscriber.
 	}
