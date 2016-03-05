@@ -14,6 +14,7 @@ public class EventManager {
     public static void register(ICallback... subscribers) {
         for(ICallback subscriber : subscribers) {
             String key = subscriber.getClass().getName();
+            
             if(manager.containsKey(key))
                 continue;
 
@@ -42,6 +43,7 @@ public class EventManager {
                 manager.get(key).subscribe(data);
             }
         } catch (Exception e) {
+        	System.out.println(e.toString());
         }
     }
 
@@ -55,6 +57,7 @@ public class EventManager {
                 subsriber.subscribe(data);
             }
     	} catch (Exception e) {
+    		System.out.println(e.toString());
     	}
     }
 }
